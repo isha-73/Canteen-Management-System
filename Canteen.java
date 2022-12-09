@@ -7,11 +7,15 @@ public class Canteen {  // In canteen class we have all the methods to be implem
     static Scanner call = new Scanner(System.in);
     Guest root=null;
     int count;
+    Guest customer;
 
     void addCustomer(){  // this will add customers in the queue and also there data will be backed up in BST
         System.out.println("Enter your name please! ");
         String name = call.next();
-        Guest customer = new Guest (name,++count); // new guest
+         customer = new Guest (name,++count); // new guest
+        if(customer.orderNum==1){
+            root=customer;
+        }
 
         if(front==null){
             front=rear=customer;
@@ -19,7 +23,8 @@ public class Canteen {  // In canteen class we have all the methods to be implem
         }
         rear.next=customer;
         rear=customer;
-        saveCustomerData(customer); // calling BST function
+
+        saveCustomerData(root,customer.orderNum); // calling BST function
 
 
     }
@@ -35,44 +40,28 @@ public class Canteen {  // In canteen class we have all the methods to be implem
         front=front.next;
 
     }
-    void saveCustomerData(Guest newNode){ //saving the customers wrt to there order number
+    Guest saveCustomerData(Guest root,int key){ //saving the customers wrt to there order number
+
             if (root == null) {
-                root = newNode;
-
-                return;
-            } else {
-                Guest ptr = root;
-                while (ptr != null) {
-                    if (ptr.orderNum > root.orderNum) { //check order number
-                        if (ptr.right == null) {
-                            ptr.right = newNode;
-
-                            break;
-                        } else {
-                            ptr = ptr.right;
-                        }
-
-                    } else if (ptr.orderNum < root.orderNum) {
-                        if (ptr.left == null) {
-                            ptr.left = newNode;
-                            break;
-                        } else {
-                            ptr = ptr.left;
-                        }
-                    }
-
-                }
+               return customer;
             }
+            if(root.orderNum>key){
+                root.left=saveCustomerData(root.left,key);
+            }
+            else if(root.orderNum<key){
+                root.right=saveCustomerData(root.right,key);
+            }
+            return root;
 
     }
     void displayinorder(Guest root) {//for displaying the data stored in the tree
 
         if(root!=null) {
             displayinorder(root.left);
-            System.out.println(" Order Number : "+root.orderNum+" Name : "+root.guestName);
+            System.out.println(" Order Number : "+root.orderNum+", Name : "+root.guestName);
             System.out.println("Total Orders :");
             for(int i=0; i<root.orders.size(); i++){
-                System.out.println(root.orders.get(i));
+                System.out.println((i+1)+" "+root.orders.get(i));
             }
             System.out.println("Total Cost : "+root.total);
             System.out.println();
