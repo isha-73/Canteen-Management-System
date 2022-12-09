@@ -19,35 +19,36 @@ class Items{
         return refNum+"\t\t\t"+name + "\t\t\t" + price + "\\-";
     }
 }
-
+//class menu for creating the menu
 class Menu{
-
+    //attributes of class
     String order;
     char i;
     int quantity;
     int count=1;
-
+    //Creating arrray list for storing different types of menu
     ArrayList<Items> appetizers = new ArrayList<Items>();
     ArrayList<Items> chinese = new ArrayList<Items>();
     ArrayList<Items> indian = new ArrayList<Items>();
     ArrayList<Items> drinks = new ArrayList<Items>();
-
+    
+    //method for returning appetizer menu
     public Items getAppetizer(int index) {
         return appetizers.get(index);
     }
-
+    //method for returning chinese menu
     public Items getChinese(int index) {
         return chinese.get(index);
     }
-
+    //method for returning Indian menu
     public Items getIndian(int index) {
         return indian.get(index);
     }
-
+    //method for returning Drink menu
     public Items getDrinks(int index) {
         return drinks.get(index);
     }
-
+   
     public String getAllAppetizers() {
         String aMenu="";
         aMenu += "\n\t**** APPETIZERS **** \n";
