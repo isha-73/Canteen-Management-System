@@ -20,7 +20,9 @@ public class Guest {
         int choice=-1;
         orders= new ArrayList<>();
         while(choice!=0){
-        System.out.println(" 0\t:Exit \n 1\t:View Menu \n 2\t:Place Order");
+        System.out.println("----------------------------------------------");
+        System.out.println(" 0:Back to Home page. \n 1:View Menu Card. \n 2:Place Order.");
+        System.out.println("----------------------------------------------");
         choice= sc.nextInt();
 
             if (choice == 1) {
@@ -42,6 +44,8 @@ public class Guest {
     }
     void showMenu(){
         menu.Populatemenu();
+        System.out.println();
+        System.out.println();
         System.out.println(menu.toString());
     }
      void placeOrder() { // function to place order
@@ -51,7 +55,7 @@ public class Guest {
          int quantity;
          float totalitem=0;
          int flag=-1;
-         System.out.println("We are ready to take the order... \n What you want to order??");
+         System.out.println("*We are ready to take the order...! \n*What you want to order??");
          while(ch!='e'){
          System.out.println("Enter : \n 'd' : Drink\n 'a' : Appetizers\n 'i' : Indian\n 'c' : Chinese\n 'e' : Stop");
          ch = sc.next().charAt(0);
@@ -65,7 +69,8 @@ public class Guest {
                if(menu.drinks.get(i).refNum==ref) {
                    totalitem= (float) (totalitem+ quantity*menu.drinks.get(i).price);
                    total = (float) (total + quantity * menu.drinks.get(i).price);
-                   System.out.println("Order of Reference " + ref+"  " + menu.drinks.get(i).name+" of sum " + totalitem+" is added.");
+                   System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
+                   System.out.println();
                    prior.add(menu.drinks.get(i).refNum);
                    flag=1;
                    break;
@@ -85,7 +90,8 @@ public class Guest {
                  if(menu.appetizers.get(i).refNum==ref) {
                      totalitem= (float) (totalitem+ quantity*menu.appetizers.get(i).price);
                      total = (float) (total + quantity * menu.appetizers.get(i).price);
-                     System.out.println("Order of Reference " + ref+"  " + menu.appetizers.get(i).name+" of sum " + totalitem+" is added.");
+                     System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
+                     System.out.println();
                      prior.add(menu.appetizers.get(i).refNum);
                      flag=1;
                      break;
@@ -103,7 +109,8 @@ public class Guest {
                  if(menu.indian.get(i).refNum==ref) {
                      totalitem= (float) (totalitem+ quantity*menu.indian.get(i).price);
                      total = (float) (total + quantity * menu.indian.get(i).price);
-                     System.out.println("Order of Reference " + ref+"  " + menu.indian.get(i).name+" of sum " + totalitem+" is added.");
+                     System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
+                     System.out.println();
                      prior.add(menu.indian.get(i).refNum);
                      flag=1;
                      break;
@@ -121,7 +128,8 @@ public class Guest {
                  if(menu.chinese.get(i).refNum==ref) {
                      totalitem= (float) (totalitem+ quantity*menu.chinese.get(i).price);
                      total = (float) (total + quantity * menu.chinese.get(i).price);
-                     System.out.println("Order of Reference " + ref+"  " + menu.chinese.get(i).name+" of sum " + totalitem+" is added.");
+                     System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
+                     System.out.println();
                      prior.add(menu.chinese.get(i).refNum);
                      flag=1;
                      break;
@@ -170,17 +178,20 @@ public class Guest {
             System.out.println("There are nothing ordered yet!");
             return;
         }
+        System.out.println("_________________________________________________________________________________________");
         System.out.println("Your Order Number : "+orderNum);
-        System.out.println(" Your Name : "+guestName);
-        System.out.println(" Items Ordered by you : ");
+        System.out.println("Your Name         : "+guestName);
+        System.out.println();
+        System.out.println("Items Ordered by you : ");
+        System.out.println("No\t\tFood\t\t");
         for(int i=0; i< orders.size();i++) {
             System.out.println((i+1)+" : "+orders.get(i));
         }
         System.out.println("Total Cost: "+total);
+        System.out.println("__________________________________________________________________________________________");
         System.out.println();
     }
 
 
 
 }
-
