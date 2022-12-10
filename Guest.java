@@ -12,8 +12,8 @@ public class Guest {
     float total;
     Guest next,right,left;
      int orderNum;
-     ArrayList<Items> orders ;
-    Items item1,item2,item3,item4;
+     ArrayList<Item> orders ;
+    Item item1,item2,item3,item4;
     boolean isDelivered;
     Guest(){}
     Guest(String guestName,int num){  // on the call of this constructor , it will show the options for guest
@@ -72,7 +72,7 @@ public class Guest {
                    totalitem= (float) (totalitem+ quantity*menu.drinks.get(i).price);
                    total = (float) (total + quantity * menu.drinks.get(i).price);
                    System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
-                   item1=new Items("Drinks",menu.drinks.get(i).name,menu.drinks.get(i).price,menu.drinks.get(i).refNum,quantity);
+                   item1=new Item("Drinks",menu.drinks.get(i).name,menu.drinks.get(i).price,menu.drinks.get(i).refNum,quantity);
                    System.out.println();
                    prior.add(menu.drinks.get(i).refNum);
                    flag=1;
@@ -94,7 +94,7 @@ public class Guest {
                      totalitem= (float) (totalitem+ quantity*menu.appetizers.get(i).price);
                      total = (float) (total + quantity * menu.appetizers.get(i).price);
                      System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
-                     item2=new Items("Appetizers",menu.appetizers.get(i).name,menu.appetizers.get(i).price,menu.appetizers.get(i).refNum,quantity);
+                     item2=new Item("Appetizers",menu.appetizers.get(i).name,menu.appetizers.get(i).price,menu.appetizers.get(i).refNum,quantity);
                      System.out.println();
                      prior.add(menu.appetizers.get(i).refNum);
                      flag=1;
@@ -114,7 +114,7 @@ public class Guest {
                      totalitem= (float) (totalitem+ quantity*menu.indian.get(i).price);
                      total = (float) (total + quantity * menu.indian.get(i).price);
                      System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
-                     item3=new Items("Indian",menu.indian.get(i).name,menu.indian.get(i).price,menu.indian.get(i).refNum,quantity);
+                     item3=new Item("Indian",menu.indian.get(i).name,menu.indian.get(i).price,menu.indian.get(i).refNum,quantity);
                      System.out.println();
                      prior.add(menu.indian.get(i).refNum);
                      flag=1;
@@ -134,7 +134,7 @@ public class Guest {
                      totalitem= (float) (totalitem+ quantity*menu.chinese.get(i).price);
                      total = (float) (total + quantity * menu.chinese.get(i).price);
                      System.out.println("Order of Reference:" + ref+"  @" + menu.drinks.get(i).name+"cost:"+totalitem);
-                     item4=new Items("Chinese",menu.chinese.get(i).name,menu.chinese.get(i).price,menu.chinese.get(i).refNum,quantity);
+                     item4=new Item("Chinese",menu.chinese.get(i).name,menu.chinese.get(i).price,menu.chinese.get(i).refNum,quantity);
                      System.out.println();
                      prior.add(menu.chinese.get(i).refNum);
                      flag=1;
