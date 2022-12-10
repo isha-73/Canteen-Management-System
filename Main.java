@@ -2,6 +2,11 @@ package com.company;
 import java.util.*;
 import java.text.DecimalFormat;
 class Item{
+     String category;
+	String name;
+	double price;
+	int refNum;
+	int quantity;
      Item(String category, String name, double price,int refNum,int quantity){
         // this constructor is used in guest
         // class to create an arraylist of specific orders
