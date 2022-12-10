@@ -7,6 +7,7 @@ class Items{
     String name;
     String category;
     int refNum;
+    int quantity;
 
     //constructor
     Items(String category, String name, double price,int refNum){
@@ -14,6 +15,15 @@ class Items{
         this.name=name;
         this.price=price;
         this.refNum=refNum;
+    }
+      Items(String category, String name, double price,int refNum,int quantity){
+        // this constructor is used in guest
+        // class to create an arraylist of specific orders
+        this.category=category;
+        this.name=name;
+        this.price=price;
+        this.refNum=refNum;
+        this.quantity=quantity;
     }
 
     public String toString() {
