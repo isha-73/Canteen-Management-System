@@ -35,8 +35,9 @@ public class Canteen {  // In canteen class we have all the methods to be implem
             return;
         }
         System.out.println("Order Number  \t\t Customer Name \t\t  Total cost ");
-        System.out.println(front.orderNum+" \t\t "+front.guestName+" \t\t "+ front.total);
+         System.out.println("\t\t"+front.orderNum+" \t\t\t\t "+front.guestName+" \t\t\t\t "+ front.total);
         System.out.println("----------------------SUCCESSFULLY DELIVERED--------------------");
+         front.isDelivered=true;
         front=front.next;
 
     }
@@ -64,6 +65,9 @@ public class Canteen {  // In canteen class we have all the methods to be implem
                 System.out.println((i+1)+" "+root.orders.get(i));
             }
             System.out.println("Total Cost : "+root.total);
+             if(root.isDelivered){
+                System.out.println("Order is Completed!");
+            }else System.out.println("Delivery is pending!");
             System.out.println();
             displayinorder(root.right);
         }
