@@ -35,7 +35,6 @@ class Menu{
 
     String order;
     char i;
-    int quantity;
     int count=1;
 
     ArrayList<Items> appetizers = new ArrayList<Items>();
