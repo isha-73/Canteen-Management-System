@@ -1,6 +1,18 @@
 package com.company;
 import java.util.*;
 import java.text.DecimalFormat;
+class Item{
+     Item(String category, String name, double price,int refNum,int quantity){
+        // this constructor is used in guest
+        // class to create an arraylist of specific orders
+        this.category=category;
+        this.name=name;
+        this.price=price;
+        this.refNum=refNum;
+        this.quantity=quantity;
+    }
+
+}
 class Items{
     //attributes
     double price;
@@ -16,16 +28,7 @@ class Items{
         this.price=price;
         this.refNum=refNum;
     }
-      Items(String category, String name, double price,int refNum,int quantity){
-        // this constructor is used in guest
-        // class to create an arraylist of specific orders
-        this.category=category;
-        this.name=name;
-        this.price=price;
-        this.refNum=refNum;
-        this.quantity=quantity;
-    }
-
+     
     public String toString() {
         return refNum+".\t\t\t"+name + "\t\t"+"  "+ price +"\\-";
     }
