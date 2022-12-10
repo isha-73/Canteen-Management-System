@@ -2,7 +2,7 @@ package com.company;
 import java.util.*;
 import java.text.DecimalFormat;
 class Item{
-     String category;
+	String category;
 	String name;
 	double price;
 	int refNum;
