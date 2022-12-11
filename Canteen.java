@@ -13,10 +13,10 @@ public class Canteen {  // In canteen class we have all the methods to be implem
         System.out.println("Enter your name please! ");
         String name = call.next();
          customer = new Guest (name,++count); // new guest
+         if(customer.toPlaceOrder==true) {
         if(customer.orderNum==1){
             root=customer;
         }
-
         if(front==null){
             front=rear=customer;
             return;
@@ -26,7 +26,7 @@ public class Canteen {  // In canteen class we have all the methods to be implem
 
         saveCustomerData(root,customer.orderNum); // calling BST function
 
-
+         }
     }
     void deliverOrder(){ // this function is to deque the customers
 
@@ -47,7 +47,7 @@ public class Canteen {  // In canteen class we have all the methods to be implem
         front=front.next;
 
     }
-    Guest saveCustomerData(Guest root,int key){ //saving the customers wrt to there order number
+    Guest saveCustomerData(Guest root,int key){ //saving the customers writ to there order number
 
             if (root == null) {
                return customer;
@@ -65,10 +65,10 @@ public class Canteen {  // In canteen class we have all the methods to be implem
 
         if(root!=null) {
             displayinorder(root.left);
-            System.out.println(" Order Number : "+root.orderNum+", Name : "+root.guestName);
-            System.out.println("Total Orders :");
+            System.out.println("Order Number : "+root.orderNum+",\nName : "+root.guestName);
+            System.out.println("||Total Orders||");
             for(int i=0; i<root.orders.size(); i++){
-                System.out.println((i+1)+" "+root.orders.get(i));
+                System.out.println((i+1)+"\t"+root.orders.get(i).name);
             }
             System.out.println("Total Cost : "+root.total);
              if(root.isDelivered){
@@ -76,6 +76,7 @@ public class Canteen {  // In canteen class we have all the methods to be implem
             }else System.out.println("Delivery is pending!");
             System.out.println();
             displayinorder(root.right);
+            System.out.println();
         }
 
     }
