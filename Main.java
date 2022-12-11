@@ -142,8 +142,10 @@ class Menu{
     //print out the whole menu in one string
     public String toString() {
         String menu = "";
-        System.out.println("\t\t\t------------------------------------------------------");
+        System.out.println("\t\t\t------------------------------------------------------\n\t\t\t------------------------------------------------------");
+       
         menu += "                                         CUMMINS CANTEEN MENU\n" +
+                "                        ------------------------------------------------------\n" +
                 "                        ------------------------------------------------------\n"; 
         menu +="\n";
         menu +="    \t\t||REFERANCE.No||\t\t||FOOD||\t\t||PRICE||\n";
