@@ -35,14 +35,15 @@ public class Canteen {  // In canteen class we have all the methods to be implem
             return;
         }
         System.out.println("Order Number  \t\t Customer Name \t\t  Total cost ");
-        System.out.println("\t\t"+front.orderNum+" \t\t\t\t "+front.guestName+" \t\t\t\t "+ front.total);
-        
+        System.out.println(""+front.orderNum+" \t\t\t "+front.guestName+"\t\t\t "+ front.total);
+        System.out.println();
         for(int i=0; i<front.orders.size(); i++){
             
-            System.out.println((i+1)+": "+front.orders.get(i).name+"  qty:"+front.orders.get(i).quantity+"   Rs."+front.orders.get(i).price+" each");
+            System.out.println((i+1)+":\t "+front.orders.get(i).name+"\tqty:"+front.orders.get(i).quantity+"\tRs."+front.orders.get(i).price+" each");
         }
-        System.out.println("----------------------SUCCESSFULLY DELIVERED--------------------");
-         
+        System.out.println();
+        System.out.println("Order SUCCESSFULLY DELIVERED");
+        System.out.println(); 
         front.isDelivered=true;
         front=front.next;
 
