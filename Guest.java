@@ -4,8 +4,7 @@ import java.util.ArrayList;     //importing ArrayList from util library
 import java.util.PriorityQueue; //importing PriorityQueue from util library
 import java.util.Scanner;       //importing Scanner from util library
 
-public
-class Guest
+public class Guest
 {
     Scanner sc = new Scanner(System.in);
     String guestName; // declaring the attributes
