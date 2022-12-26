@@ -108,7 +108,7 @@ public class Guest
                     {
                         totalitem = (float)(totalitem + quantity * menu.appetizers.get(i).price);
                         total = (float)(total + quantity * menu.appetizers.get(i).price);
-                        System.out.println("Order of Reference:" + ref + "  @" + menu.drinks.get(i).name + "cost:" + totalitem);
+                        System.out.println("Order of Reference:" + ref + "  " + menu.appetizers.get(i).name + " of cost:" + totalitem+" is added");
                         item2 = new Item("Appetizers", menu.appetizers.get(i).name, menu.appetizers.get(i).price, menu.appetizers.get(i).refNum, quantity);
                         System.out.println();
                         prior.add(menu.appetizers.get(i).refNum);
@@ -135,7 +135,7 @@ public class Guest
                     {
                         totalitem = (float)(totalitem + quantity * menu.indian.get(i).price);
                         total = (float)(total + quantity * menu.indian.get(i).price);
-                        System.out.println("Order of Reference:" + ref + "  @" + menu.drinks.get(i).name + "cost:" + totalitem);
+                        System.out.println("Order of Reference:" + ref + "  " + menu.indian.get(i).name + " of cost:" + totalitem+" is added");
                         item3 = new Item("Indian", menu.indian.get(i).name, menu.indian.get(i).price, menu.indian.get(i).refNum, quantity);
                         System.out.println();
                         prior.add(menu.indian.get(i).refNum);
@@ -162,7 +162,7 @@ public class Guest
                     {
                         totalitem = (float)(totalitem + quantity * menu.chinese.get(i).price);
                         total = (float)(total + quantity * menu.chinese.get(i).price);
-                        System.out.println("Order of Reference:" + ref + "  @" + menu.drinks.get(i).name + "cost:" + totalitem);
+                        System.out.println("Order of Reference:" + ref + "  " + menu.chinese.get(i).name +" of cost:" + totalitem+" is added");
                         item4 = new Item("Chinese", menu.chinese.get(i).name, menu.chinese.get(i).price, menu.chinese.get(i).refNum, quantity);
                         System.out.println();
                         prior.add(menu.chinese.get(i).refNum);
